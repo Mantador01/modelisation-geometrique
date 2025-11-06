@@ -1,6 +1,6 @@
 # Modélisation Géométrique - UE-INF2315M
 
-Ce dépôt contient le code source du projet réalisé dans le cadre de l'UE-INF2315M (Modélisation Géométrique) à l'Université Claude Bernard Lyon 1.
+Ce dépôt contient le code source et le rapport du projet réalisé dans le cadre de l'UE-INF2315M (Modélisation Géométrique) à l'Université Claude Bernard Lyon 1.
 
 **Auteur :** Alexandre COTTIER
 
@@ -53,13 +53,6 @@ Cette partie implémente un système de modélisation basé sur les champs de di
 * **Différence :** `DifferenceNode` - `max(A, -B)`
 * **Fusion Lisse :** `BlendNode` - `smooth-min(A, B, k)`
 
-### Galerie (SDF)
-
-| Union | Intersection | Différence | Fusion Lisse (Blend) |
-| :---: | :---: | :---: | :---: |
-|  |  |  |  |
-| Union d'une sphère et d'une box | Intersection d'une sphère et d'une box | Différence (box soustraite à la sphère) | Fusion lissée (bien meilleur rendu que l'union simple) |
-
 ---
 
 ## 3. ⚙️ Génération Procédurale (Surfaces Implicites)
@@ -68,12 +61,6 @@ Cette section utilise les SDF pour des techniques de génération procédurale.
 
 * **Sphere Tracing :** Implémentation d'un algorithme de *sphere tracing* (ou *ray marching*) pour calculer l'intersection d'un rayon avec la surface implicite (SDF). Le rayon avance par pas garantis de ne toucher aucune surface.
 * **Érosion Procédurale :** Simulation d'usure ou d'érosion en combinant une forme de base (ex: une sphère) avec un ensemble de sphères d'érosion via des opérateurs (smoothmax, smoothmin, max). Cela permet de créer des cratères, des bosses et des formes complexes.
-
-### Galerie (Érosion)
-
-| Érosion (trous) | Érosion (bosses et cratères) | Dé procédural |
-| :---: | :---: | :---: |
-|  |  |  |
 
 ---
 
@@ -84,12 +71,6 @@ Une section supplémentaire, hors-sujet du cours principal, explore la générat
 * **Technique :** Le terrain est un maillage de type `heightmap`, où l'altitude $h(x, y)$ est calculée via une fonction de bruit.
 * **Biomes :** La coloration du maillage dépend de l'altitude pour simuler différents biomes (eau, herbe, roche, neige).
 * **Paramètres :** Le générateur est contrôlé par des paramètres tels que l'amplitude, la fréquence, les octaves, `warpStrength` (pour casser la symétrie) et `heightBias` (niveau de la mer).
-
-### Galerie (Terrain)
-
-| Vue de dessus (Biomes) | Vue de côté (Heightmap) |
-| :---: | :---: |
-|  |  |
 
 ---
 
@@ -126,22 +107,3 @@ Un benchmark sur 107 appels a été réalisé pour évaluer les opérations SDF.
 * L'évaluation **incrémentale** (ajout d'impacts successifs) est environ **10-15% plus rapide** que l'évaluation **batch** (application de tous les impacts en une seule fois).
 
 ---
-
-## 🚀 Installation et Lancement
-
-*(À compléter par vous-même)*
-
-Vous devriez décrire ici les dépendances (ex: **Qt**, un compilateur C++, etc.) et les étapes pour compiler et lancer le projet.
-
-```bash
-# Exemple
-mkdir build
-cd build
-cmake ..
-make
-./VotreExecutable
-```
-
-## 📜 Licence
-
-*(Pensez à ajouter une licence ! Ex: MIT, GPL, etc.)*
